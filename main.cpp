@@ -6,19 +6,6 @@
 #include "words_f.h"
 
 
-/*CHECKING*/
-#include <time.h>
-clock_t b_stopwatch;
-clock_t e_stopwatch;
-void start_stopwatch(){
-    b_stopwatch = clock();
-}
-void stop_stopwatch(){
-    e_stopwatch = clock();
-    cout << ((double) (e_stopwatch - b_stopwatch)) / CLOCKS_PER_SEC << " s\n";
-}
-/*CHECKING END*/
-
 using namespace std;
 
 int main()
@@ -37,9 +24,7 @@ int main()
     int correct_req;
     switch(choice){
     case 1:
-        start_stopwatch();/**/
         words = get_data_from("Irregular Verbs");
-        stop_stopwatch();/**/
         //words = get_data_from("test");
         correct_req = 3;
         break;
@@ -89,7 +74,6 @@ int main()
         for(int i=0;i<correct_req;i++){
             cin >> res[i];
         }
-        start_stopwatch(); /**/
         if(check(res,word,correct_req)==0){
             status--;
         }
@@ -113,14 +97,12 @@ int main()
                 words.push_front(word);
                 words.front().set_status(status);
             }
-
         }
         else
             remain--;
-        stop_stopwatch();/**/
         cin.clear();
         fflush(stdin);
-        //system("cls");
+        system("cls");
     }
 
     cout << " Ilosc bledow: " << mistakes_counter << endl << endl;
