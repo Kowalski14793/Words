@@ -4,12 +4,13 @@
 #include <iostream>
 #include <vector>
 #include <fstream>
+#include <string>
 
 #include "word.h"
 
 using namespace std;
 
-bool poprawnosc(string *,Word,int);
+bool check(string *,Word,int);
 
 vector<Word> get_data_from(string);
 

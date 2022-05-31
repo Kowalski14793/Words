@@ -1,10 +1,10 @@
 #include "words_f.h"
 
 
-bool poprawnosc(string *odp,Word s,int n){
+bool check(string *odp,Word s,int n){
     cout << endl << odp[n-1];
-    int liczba_poprawnych=0;
-    string tab_p[3] = {s.get_ang1(),s.get_ang2(),s.get_ang3()};
+    int good_counter=0;
+    string tab_p[3] = {s.get_eng1(),s.get_eng2(),s.get_eng3()};
 
     for(int i=0;i<3;i++){
 
@@ -20,8 +20,8 @@ bool poprawnosc(string *odp,Word s,int n){
                 j++;
             }
             if(flaga == true)
-                liczba_poprawnych++;
-            if(liczba_poprawnych>=n)
+                good_counter++;
+            if(good_counter>=n)
                 return 0;
         }
 

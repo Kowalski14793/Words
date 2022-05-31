@@ -12,25 +12,25 @@ int main()
 
     srand(time(NULL));
 
-    //vector<Word> slowka;
-    vector<Word> slowka;
-    //slowka = get_data_from("Irregular Verbs.txt");
-    //slowka = get_data_from("test.txt");
-    int a;
+    //vector<Word> words;
+    vector<Word> words;
+    //words = get_data_from("Irregular Verbs.txt");
+    //words = get_data_from("test.txt");
+    int choice;
     cout << "\n Wybierz co chesz zdawac:\n\n";
     cout << " 1. Czasowniki nieregularne\n";
     cout << " 2. Zestawy slowek\n";
     cout << " *. Exit\n";
-    cin >> a;
-    int no;
-    switch(a){
+    cin >> choice;
+    int correct_req;
+    switch(choice){
     case 1:
-        slowka = get_data_from("Irregular Verbs");
-        no = 3;
+        words = get_data_from("Irregular Verbs");
+        correct_req = 3;
         break;
     case 2:
-        slowka = get_data_from("Words");
-        no=1;
+        words = get_data_from("Words");
+        correct_req=1;
         break;
     default:
         return 3;
@@ -40,43 +40,43 @@ int main()
 
 
     cout << "Zasady: \n";
-    cout << " 1. Aby zaliczyc nalezy dobrze podac " << no << " formy nieregularne.\n";
+    cout << " 1. Aby zaliczyc nalezy dobrze podac " << correct_req << " formy nieregularne.\n";
     cout << " 2. Bledna odpowiedz bedzie skutkowac koniecznoscia odpowiedzenia poprawnie 2 razy pod rzad dla danego slowa.\n\n";
 
-    int n = slowka.size();
-    int pozostalo=n;
-    unsigned int bledy = 0;
+    int n = words.size(); /// words_size
+    int remain=n;
+    unsigned int mistakes_counter = 0;
 
-    while(pozostalo!=0){
+    while(remain!=0){
 
         int i = rand()%n;
-        unsigned short int status = slowka[i].get_status();
+        unsigned short int status = words[i].get_status();
         if(status>0){
-            if(pozostalo!=n)
-                cout << " Pozostalo: " << pozostalo << endl << endl;
+            if(remain!=n)
+                cout << " Pozostalo: " << remain << endl << endl;
 
-            cout << " " <<  slowka[i].get_pol() << ":\n";
+            cout << " " <<  words[i].get_pol() << ":\n";
 
-            string odp[no];
-            for(int i=0;i<no;i++){
-                cin >> odp[i];
+            string res[correct_req]; /// response
+            for(int i=0;i<correct_req;i++){
+                cin >> res[i];
             }
 
-            if(poprawnosc(odp,slowka[i],no)==0){
+            if(check(res,words[i],correct_req)==0){
                 status--;
-                slowka[i].set_status(status);
+                words[i].set_status(status);
 
                 if(status==0)
-                    pozostalo--;
+                    remain--;
             }
             else{
-                slowka[i].set_status(2);
+                words[i].set_status(2);
                 cout << "\nZle\n\n";
                 cout << "Poprawna odpowiedz to:\n";
-                cout << slowka[i] << endl;
+                cout << words[i] << endl;
                 cout << "------------------------------" << endl;
 
-                bledy++;
+                mistakes_counter++;
                 system("pause");
             }
 
@@ -86,7 +86,7 @@ int main()
         system("cls");
     }
 
-    cout << " Ilosc bledow: " << bledy << endl << endl;
+    cout << " Ilosc bledow: " << mistakes_counter << endl << endl;
 
 }
 

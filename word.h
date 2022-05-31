@@ -7,7 +7,7 @@ using namespace std;
 
 class Word{
 protected:
-    string ang1,ang2,ang3,pol;
+    string eng1,eng2,eng3,pol;
     unsigned short int status;
 public:
     Word(string ,string ,string ,string );
@@ -15,9 +15,9 @@ public:
     friend ostream& operator << (ostream &s,Word w);
 
     void set_status(unsigned short int);
-    string get_ang1();
-    string get_ang2();
-    string get_ang3();
+    string get_eng1();
+    string get_eng2();
+    string get_eng3();
     string get_pol();
     unsigned short int get_status();
 };
