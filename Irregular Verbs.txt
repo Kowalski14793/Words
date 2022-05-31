@@ -1,0 +1,95 @@
+become|became|become|stawac sie, zostawac kims/czyms
+begin|began|begun|zaczynac
+break|broke|broken|lamac, pekac, rozbic, tluc
+bring|brought|brought|przynosic, przyprowadzic
+build|built|built|budowac
+buy|bought|bought|kupowac
+catch|caught|caught|lapac
+choose|chose|chosen|wybierac
+come|came|come|przyjsc, przyjechac
+cost|cost|cost|kosztowac
+cut|cut|cut|ciac, kroic, skaleczyc
+do|did|done|robic
+draw|drew|drawn|rysowac, pociagnac, remisowac
+dream|dreamt|dreamt|snic, marzyc
+drink|drank|drunk|pic
+drive|drove|driven|prowadzic, kierowac sie czyms
+eat|ate|eaten|jesc
+fall|fell|fallen|padac, upadac, spadac
+feel|felt|felt|czuc
+find|found|found|znalezc
+fly|flew|flown|latac
+get|got|got|dostawac
+give|gave|given|dawac
+go|went|gone|isc
+grow|grew|grown|rosnac
+have|had|had|miec
+hear|heard|heard|slyszec
+hit|hit|hit|uderzac
+hold|held|held|trzymac, utrzymywac, posiadac
+hurt|hurt|hurt|ranic, bolec
+keep|kept|kept|trzymac
+know|knew|known|znac, wiedziec
+learn|learnt|learnt|uczyc sie
+leave|left|left|opuszczac, wyjezdzac, zostawiac
+lend|lent|lent|pozyczac
+lose|lost|lost|tracic, zgubic
+make|made|made|robic, wykonywac
+mean|meant|meant|znaczyc, oznaczac; miec na mysli
+meet|met|met|spotykac, poznac
+pay|paid|paid|placic
+put|put|put|klasc
+read|read|read|czytac
+ride|rode|ridden|jezdzic
+ring|rang|rung|dzwonic
+run|ran|run|biec
+say|said|said|mowic
+see|saw|seen|widziec
+sell|sold|sold|sprzedawac
+send|sent|sent|wysylac, slac
+show|showed|shown|pokazywac
+shut|shut|shut|zamykac
+sing|sang|sung|spiewac
+sit|sat|sat|siedziec, siadac
+sleep|slept|slept|spac
+speak|spoke|spoken|mowic, rozmawiac
+spend|spent|spent|spedzac, wydawac
+stand|stood|stood|stac
+steal|stole|stolen|krasc
+swim|swam|swum|plywac
+take|took|taken|brac
+teach|taught|taught|uczyc
+tell|told|told|powiedziec
+think|thought|thought|myslec, sadzic, uwazac
+throw|threw|thrown|rzucac
+wake|woke|woken|budzic
+wear|wore|worn|nosic, zakladac
+understand|understood|understood|rozumiec
+win|won|won|wygrywac
+write|wrote|written|pisac
+awake|awoke|awoken|obudzic
+beat|beat|beaten|bic
+bite|bit|bitten|ugryzc
+bleed|bled|bled|krwawic
+blow|blew|blown|wiac, dmuchac
+burn|burnt|burnt|palic, parzyc, plonac
+dig|dug|dug|kopac (np. w ziemi)
+feed|fed|fed|karmic, zywic
+fight|fought|fought|walczyc, bic sie
+forget|forgot|forgotten|zapominac
+forgive|forgave|forgiven|wybaczac
+freeze|froze|frozen|zamarzac
+hang|hung|hung|zawieszac (cos, np. obraz)
+hide|hid|hidden|chowac, ukrywac
+let|let|let|pozwalac
+lie|lay|lain|lezec, klasc sie
+light|lit|lit|zapalac, rozpalac, oswietlac
+quit|quit|quit|rzucac, opuszczac
+rise|rose|risen|podnosic sie, wzrastac, wschodzic (o sloncu)
+shake|shook|shaken|trzasc, potrzasac
+shine|shone|shone|swiecic, blyszczec
+shoot|shot|shot|strzelac
+sink|sank|sunk|tonac (o statku), zapadac sie
+stick|stuck|stuck|wbijac, wtykac, przyklejac, wystawic
+strike|struck|struck|uderzyc, wybijac
+tear|tore|torn|drzec, rozdzierac
