@@ -4,6 +4,19 @@
 #include "word.h"
 #include "words_f.h"
 
+/*TEMP*/
+#include <time.h>
+clock_t b_stopwatch;
+clock_t e_stopwatch;
+void start_stopwatch(){
+    b_stopwatch = clock();
+}
+void stop_stopwatch(){
+    e_stopwatch = clock();
+    cout << ((double) (e_stopwatch - b_stopwatch)) / CLOCKS_PER_SEC << " s\n";
+}
+/**/
+
 using namespace std;
 
 int main()
@@ -24,7 +37,9 @@ int main()
     int correct_req;
     switch(choice){
     case 1:
+        start_stopwatch();/**/
         words = get_data_from("Irregular Verbs");
+        stop_stopwatch();/**/
         correct_req = 3;
         break;
     case 2:
@@ -60,7 +75,7 @@ int main()
             for(int i=0;i<correct_req;i++){
                 cin >> res[i];
             }
-
+            start_stopwatch();/**/
             if(check(res,words[i],correct_req)==0){
                 status--;
                 words[i].set_status(status);
@@ -80,6 +95,7 @@ int main()
             }
 
         }
+        stop_stopwatch();/**/
         cin.clear();
         fflush(stdin);
         system("cls");
