@@ -1,5 +1,6 @@
 #include <iostream>
 #include <ctime>
+#include <deque>
 
 #include "word.h"
 #include "words_f.h"
@@ -8,11 +9,9 @@ using namespace std;
 
 int main()
 {
-
     srand(time(NULL));
-
     //vector<Word> words;
-    vector<Word> words;
+    deque<Word> words;
     //words = get_data_from("Irregular Verbs.txt");
     //words = get_data_from("test.txt");
     int choice;
@@ -24,7 +23,8 @@ int main()
     int correct_req;
     switch(choice){
     case 1:
-        words = get_data_from("Irregular Verbs");
+        //words = get_data_from("Irregular Verbs");
+        words = get_data_from("test");
         correct_req = 3;
         break;
     case 2:
@@ -37,7 +37,6 @@ int main()
     }
 
 
-
     cout << "Zasady: \n";
     cout << " 1. Aby zaliczyc nalezy dobrze podac " << correct_req << " formy nieregularne.\n";
     cout << " 2. Bledna odpowiedz bedzie skutkowac koniecznoscia odpowiedzenia poprawnie 2 razy pod rzad dla danego slowa.\n\n";
@@ -45,44 +44,67 @@ int main()
     int n = words.size(); /// words_size
     int remain=n;
     unsigned int mistakes_counter = 0;
-
+    int lim=3;
     while(remain!=0){
+        cout << "\n_________\n";
+        bool is_back;
+        Word word;
 
-        int i = rand()%n;
-        unsigned short int status = words[i].get_status();
-        if(status>0){
-            if(remain!=n)
-                cout << " Pozostalo: " << remain << endl << endl;
+        if(rand()%10>lim){
+            is_back = true;
+        }
+        else{
+            is_back = false;
+        }
+        if(is_back){
+            word = words.back();
+            words.pop_back();
+        }
+        else{
+            word = words.front();
+            words.pop_front();
+        }
+        unsigned short int status = word.get_status();
+        cout << "\n.STATUS: " <<status << endl;
+        cout << " Pozostalo: " << remain << endl << endl;
 
-            cout << " " <<  words[i].get_pol() << ":\n";
+        cout << " " <<  word.get_pol() << ":\n";
 
-            string res[correct_req]; /// response
-            for(int i=0;i<correct_req;i++){
-                cin >> res[i];
-            }
+        string res[correct_req]; /// response
+        for(int i=0;i<correct_req;i++){
+            cin >> res[i];
+        }
+        if(check(res,word,correct_req)==0){
+            status--;
+        }
+        else{
+            status = 2;
+            cout << "\nZle\n\n";
+            cout << "Poprawna odpowiedz to:\n";
+            cout << word << endl;
+            cout << "------------------------------" << endl;
 
-            if(check(res,words[i],correct_req)==0){
-                status--;
-                words[i].set_status(status);
+            mistakes_counter++;
+            system("pause");
+        }
 
-                if(status==0)
-                    remain--;
+        if(status!=0){
+            if(rand()%10>lim){
+                words.push_back(word);
+                words.back().set_status(status);
             }
             else{
-                words[i].set_status(2);
-                cout << "\nZle\n\n";
-                cout << "Poprawna odpowiedz to:\n";
-                cout << words[i] << endl;
-                cout << "------------------------------" << endl;
-
-                mistakes_counter++;
-                system("pause");
+                words.push_front(word);
+                words.front().set_status(status);
             }
 
         }
+        else
+            remain--;
+        cout << ".STATUS: " << status << endl;
         cin.clear();
         fflush(stdin);
-        system("cls");
+        //system("cls");
     }
 
     cout << " Ilosc bledow: " << mistakes_counter << endl << endl;

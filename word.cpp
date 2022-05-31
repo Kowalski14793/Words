@@ -2,6 +2,7 @@
 
 
 Word::Word(string n_eng1,string n_eng2,string n_eng3,string n_pol):eng1(n_eng1),eng2(n_eng2),eng3(n_eng3),pol(n_pol){status=1;};
+Word::Word(){};
 Word::~Word(){};
 
 void Word::set_status(unsigned short int status){

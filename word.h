@@ -11,6 +11,7 @@ protected:
     unsigned short int status;
 public:
     Word(string ,string ,string ,string );
+    Word();
     ~Word();
     friend ostream& operator << (ostream &s,Word w);
 
