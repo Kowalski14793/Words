@@ -39,7 +39,7 @@ int main()
 
 
     cout << "Zasady: \n";
-    cout << " 1. Aby zaliczyc nalezy dobrze podac " << correct_req << " formy nieregularne.\n";
+    cout << " 1. Odpowiedz wymaga podania dobrze " << correct_req << " form.\n";
     cout << " 2. Bledna odpowiedz bedzie skutkowac koniecznoscia odpowiedzenia poprawnie 2 razy pod rzad dla danego slowa.\n\n";
 
     int n = words.size(); /// words_size
@@ -68,7 +68,7 @@ int main()
         unsigned short int status = word.get_status();
         cout << " Pozostalo: " << remain << endl << endl;
 
-        cout << " " <<  word.get_pol() << ":\n";
+        cout << " " <<  word.get_desc() << ":\n";
 
         string res[correct_req]; /// response
         for(int i=0;i<correct_req;i++){
