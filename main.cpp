@@ -31,7 +31,7 @@ int main()
     cout << " 1. Odpowiedz wymaga podania dobrze " << correct_req << " form.\n";
     cout << " 2. Bledna odpowiedz bedzie skutkowac koniecznoscia odpowiedzenia poprawnie 2 razy pod rzad dla danego czasownika nieregularnego.\n\n";
 
-    int n = words.size(); /// words_size
+    int n = words.size();
     int remain=n;
     unsigned int mistakes_counter = 0;
     int lim=3;
@@ -95,5 +95,4 @@ int main()
     }
 
     cout << "\n Ilosc bledow: \n" << mistakes_counter << endl << endl;
-
 }
