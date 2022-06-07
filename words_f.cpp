@@ -32,21 +32,28 @@ deque<Word> get_data_from(string file_name,int n){
     ifstream file;
     file.open(file_name);
     if(file.is_open()){
-        deque<Word> data;
+        deque<Word> data,f_data;
         string col1,col2,col3,col4;
 
-        while(!file.eof() && n!=0){
+        while(!file.eof()){
             getline(file,col1,'|');
             getline(file,col2,'|');
             getline(file,col3,'|');
             getline(file,col4);
             Word w(col1,col2,col3,col4);
             data.push_back(w);
-            --n;
         }
         file.close();
         random_shuffle(data.begin(),data.end());
-        return data;
+
+        if(n==0 || n>=data.size())
+            return data;
+        else{
+            for(int i=0;i<n;i++){
+                f_data.push_back(data[i]);
+            }
+            return f_data;
+        }
     }
     else
         cout << "Error: 404";

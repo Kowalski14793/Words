@@ -27,8 +27,6 @@ int main()
             cin.ignore();
             cout << "Podaj ile chcesz slowek (max:" << N << "), 0 - all: ";
         }
-        if(n>N)
-            n = N;
         words = get_data_from("Irregular Verbs",n);
         correct_req = 3;
         break;
