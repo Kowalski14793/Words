@@ -11,7 +11,8 @@ int main()
 {
     srand(time(NULL));
     deque<Word> words;
-
+    int n;
+    int N = 95;
     int choice;
     cout << " 1. Czasowniki nieregularne\n";
     cout << " *. Exit\n";
@@ -19,7 +20,16 @@ int main()
     int correct_req;
     switch(choice){
     case 1:
-        words = get_data_from("Irregular Verbs");
+
+        cout << "Podaj ile chcesz slowek (max:" << N << "), 0 - all: ";
+        while (!( cin >> n )){
+            cin.clear();
+            cin.ignore();
+            cout << "Podaj ile chcesz slowek (max:" << N << "), 0 - all: ";
+        }
+        if(n>N)
+            n = N;
+        words = get_data_from("Irregular Verbs",n);
         correct_req = 3;
         break;
     default:
@@ -29,9 +39,10 @@ int main()
 
     cout << "Zasady: \n";
     cout << " 1. Odpowiedz wymaga podania dobrze " << correct_req << " form.\n";
-    cout << " 2. Bledna odpowiedz bedzie skutkowac koniecznoscia odpowiedzenia poprawnie 2 razy pod rzad dla danego czasownika nieregularnego.\n\n";
+    cout << " 2. Wymagana jest poprawna kolejnosc.\n";
+    cout << " 3. Bledna odpowiedz bedzie skutkowac koniecznoscia odpowiedzenia poprawnie 2 razy pod rzad dla danego\n    czasownika nieregularnego.\n\n";
 
-    int n = words.size();
+    n = words.size();
     int remain=n;
     unsigned int mistakes_counter = 0;
     int lim=3;
@@ -94,5 +105,5 @@ int main()
         system("cls");
     }
 
-    cout << "\n Ilosc bledow: \n" << mistakes_counter << endl << endl;
+    cout << "\n Ilosc bledow: " << mistakes_counter << endl << endl;
 }

@@ -13,7 +13,7 @@ using namespace std;
 
 bool check(string *,Word,int);
 
-deque<Word> get_data_from(string);
+deque<Word> get_data_from(string,int);
 
 
 #endif // WORDS_F
