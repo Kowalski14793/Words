@@ -5,7 +5,6 @@
 
 using namespace std;
 
-
 class Eng_word{
 protected:
     string eng1,eng2,eng3;
@@ -42,6 +41,5 @@ public:
 
     unsigned short int get_status();
 };
-
 
 #endif // WORD_H

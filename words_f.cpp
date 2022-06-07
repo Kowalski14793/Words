@@ -1,40 +1,19 @@
 #include "words_f.h"
 
-
 bool check(string *res,Word s,int n){
     int good_counter=0;
     string answer_tab[3] = {s.get_eng1(),s.get_eng2(),s.get_eng3()};
 
-    for(int i=0;i<3;i++){
-
-        int j=0;
-        for(int k=0;k<n;k++){
-            if(answer_tab[i].length()!=res[k].length())
-                continue;
-            bool flag = true;
-            while(res[k][j]!='\0'){
-
-                if(answer_tab[i][j] != res[k][j]){
-                    flag = false;
-                    break;
-                }
-                j++;
-            }
-            if(flag == true){
-                if(n==3 && i==k){
-                    good_counter++;
-                }
-                else if(n==1)
-                    good_counter++;
-            }
-            if(good_counter>=n)
-                return 0;
+    for(int i=0;i<n;i++){
+        if(answer_tab[i].length()!=res[i].length())
+            return 1;
+        for(int j=0;j<res[i].length();j++){
+            if(res[i][j]!=answer_tab[i][j])
+                return 1;
         }
     }
-    return 1;
+    return 0;
 }
-
-
 
 deque<Word> get_data_from(string file_name){
 
@@ -71,5 +50,3 @@ deque<Word> get_data_from(string file_name){
     else
         cout << "Error: 404";
 }
-
-
